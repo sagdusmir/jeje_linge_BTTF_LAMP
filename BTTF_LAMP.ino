@@ -46,57 +46,54 @@ Serial.println(analogRead(analogPin));
 
 delay(100);
   switch (var) {
-  case 0: 
-  for(int i=0; i<5;i++){
-  pixels.setPixelColor(i, pixels.Color(255,0,0));
-  }
-  for(int i=5; i<11;i++){
-  pixels.setPixelColor(i, pixels.Color(180,140,0));
-  }
-  for(int i=11; i<17;i++){
-  pixels.setPixelColor(i, pixels.Color(255,0,0));
-  }
-  pixels.show();
-  break;
+  case 0:
+    pixels.clear();
+    for(int i=0; i<16;i++){
+      pixels.setPixelColor(i, pixels.Color(0,0,0));
+    }
+    pixels.show();
+    break;
 
   case 1:
+    pixels.clear(); 
     for(int i=0; i<5;i++){
-  pixels.setPixelColor(i, pixels.Color(0,0,255));
-  }
-  for(int i=5; i<11;i++){
-  pixels.setPixelColor(i, pixels.Color(200,250,255));
-
-  }
-  for(int i=11; i<17;i++){
-  pixels.setPixelColor(i, pixels.Color(0,0,255));
-  }
- pixels.show();
- break;
-
- case 2:
-  pixels.clear();
-  for(int i=0; i<5;i++){
-  pixels.setPixelColor(i, pixels.Color(255,0,10));
-  }
+      pixels.setPixelColor(i, pixels.Color(255,0,0));
+    }
     for(int i=5; i<11;i++){
-  pixels.setPixelColor(i, pixels.Color(0,10,255));
-  }
+      pixels.setPixelColor(i, pixels.Color(180,140,0));
+    }
     for(int i=11; i<17;i++){
-  pixels.setPixelColor(i, pixels.Color(255,0,10));
+      pixels.setPixelColor(i, pixels.Color(255,0,0));
+    }
+    pixels.show();
+    break;
+
+  case 2:
+    pixels.clear();  
+    for(int i=0; i<5;i++){
+      pixels.setPixelColor(i, pixels.Color(0,0,255));
+    }
+    for(int i=5; i<11;i++){
+      pixels.setPixelColor(i, pixels.Color(200,250,255));
+    }
+    for(int i=11; i<17;i++){
+      pixels.setPixelColor(i, pixels.Color(0,0,255));
+    }
+    pixels.show();
+    break;
+
+  case 3:
+    pixels.clear();
+    for(int i=0; i<5;i++){
+      pixels.setPixelColor(i, pixels.Color(255,0,10));
+    }
+    for(int i=5; i<11;i++){
+      pixels.setPixelColor(i, pixels.Color(0,10,255));
+    }
+    for(int i=11; i<17;i++){
+      pixels.setPixelColor(i, pixels.Color(255,0,10));
+    }
+    pixels.show();
+    break;
   }
- pixels.show();
- break;
-
- case 3:
-  pixels.clear();
-  for(int i=0; i<16;i++){
-  pixels.setPixelColor(i, pixels.Color(0,0,0));
-  }
- pixels.show();
- break;
-  }
-
-
-
 }
-

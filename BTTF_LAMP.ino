@@ -16,6 +16,7 @@ int analogPin = A1;
 // When setting up the NeoPixel library, we tell it how many pixels,
 Adafruit_NeoPixel pixels(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
 
+int old_state = 0;
 
 void setup() {
 
@@ -30,12 +31,15 @@ void loop() {
   // switch on the ring in blue
   pixels.clear(); // Set all pixel colors to 'off'
   
-  if(var>3){var = 0;}
-
   if(analogRead(analogPin)>50)
   { 
-    var = var+1 ;
-    delay(45);
+    if (old_state == 0) {
+      var = (var+1) % 4 ;
+      delay(45);
+      old_state = 1;
+    }
+  } else {
+    old_state = 0;
   }
   
 Serial.print("var=");
